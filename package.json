@@ -1,0 +1,39 @@
+{
+  "name": "novixo-ai",
+  "version": "0.1.0",
+  "description": "Unified AI provider client with auto-fallback, rate-limit detection, and response caching. Works with Groq, Gemini, and Anthropic.",
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "README.md"
+  ],
+  "scripts": {
+    "build": "tsup src/index.ts --format esm,cjs --dts",
+    "dev": "tsup src/index.ts --format esm,cjs --dts --watch",
+    "test": "node --experimental-vm-modules node_modules/.bin/jest"
+  },
+  "keywords": [
+    "ai",
+    "groq",
+    "gemini",
+    "anthropic",
+    "llm",
+    "fallback",
+    "multi-provider",
+    "novixo"
+  ],
+  "author": "NovixoTech",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.0",
+    "typescript": "^5.0.0"
+  }
+}
