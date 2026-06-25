@@ -39,23 +39,23 @@ console.log(response.provider); // which provider answered
 
 ## Supported providers
 
-| Provider       | Key name        | Default model                              |
-|----------------|-----------------|---------------------------------------------|
-| Groq           | `groq`          | llama3-8b-8192                              |
-| Google Gemini  | `gemini`        | gemini-1.5-flash                            |
-| Anthropic      | `anthropic`     | claude-haiku-4-5-20251001                   |
-| OpenAI         | `openai`        | gpt-4o-mini                                 |
-| Cohere         | `cohere`        | command-r-plus                              |
-| Mistral        | `mistral`       | mistral-small-latest                        |
-| Together AI    | `together`      | meta-llama/Llama-3-8b-chat-hf               |
-| Perplexity     | `perplexity`    | llama-3-sonar-small-32k-chat                |
-| Hugging Face   | `huggingface`   | mistralai/Mistral-7B-Instruct-v0.2          |
-| OpenRouter     | `openrouter`    | openai/gpt-4o-mini (access to 100+ models) |
-| Fireworks AI   | `fireworks`     | llama-v3-8b-instruct                        |
-| DeepSeek       | `deepseek`      | deepseek-chat                               |
-| xAI (Grok)     | `xai`           | grok-beta                                   |
-| AI21           | `ai21`          | jamba-instruct                              |
-| NLP Cloud      | `nlpcloud`      | finetuned-llama-3-70b                       |
+| Provider      | Key name      | Default model                              |
+|---------------|---------------|--------------------------------------------|
+| Groq          | `groq`        | llama-3.3-70b-versatile                    |
+| Google Gemini | `gemini`      | gemini-2.0-flash                           |
+| Anthropic     | `anthropic`   | claude-haiku-4-5-20251001                  |
+| OpenAI        | `openai`      | gpt-4o-mini                                |
+| Cohere        | `cohere`      | command-r-plus                             |
+| Mistral       | `mistral`     | mistral-small-latest                       |
+| Together AI   | `together`    | meta-llama/Llama-3-8b-chat-hf              |
+| Perplexity    | `perplexity`  | llama-3-sonar-small-32k-chat               |
+| Hugging Face  | `huggingface` | mistralai/Mistral-7B-Instruct-v0.2         |
+| OpenRouter    | `openrouter`  | openai/gpt-4o-mini (access to 100+ models) |
+| Fireworks AI  | `fireworks`   | llama-v3-8b-instruct                       |
+| DeepSeek      | `deepseek`    | deepseek-chat                              |
+| xAI (Grok)    | `xai`         | grok-beta                                  |
+| AI21          | `ai21`        | jamba-instruct                             |
+| NLP Cloud     | `nlpcloud`    | finetuned-llama-3-70b                      |
 
 ---
 
@@ -101,7 +101,7 @@ const ai = new NovixoAI({
   models: {
     openai:  "gpt-4o",
     mistral: "mistral-large-latest",
-    groq:    "llama3-70b-8192",
+    groq:    "llama-3.3-70b-versatile",
   },
 
   maxTokens:   1024,     // default: 1024
@@ -169,4 +169,3 @@ const res = await ai.chat(messages, {
 ## License
 
 MIT © [NovixoTech](https://github.com/NovixoTech)
-
