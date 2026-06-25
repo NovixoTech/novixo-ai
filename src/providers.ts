@@ -4,7 +4,7 @@ import type { Message, Provider } from "./types.js";
 
 export const DEFAULT_MODELS: Record<Provider, string> = {
   groq:        "llama3-8b-8192",
-  gemini:      "gemini-1.5-flash",
+  gemini:      "gemini-2.0-flash",
   anthropic:   "claude-haiku-4-5-20251001",
   openai:      "gpt-4o-mini",
   cohere:      "command-r-plus",
@@ -160,11 +160,12 @@ export async function callXAI(messages: Message[], systemPrompt: string | undefi
     { Authorization: `Bearer ${apiKey}` },
     model, messages, systemPrompt, maxTokens, temperature, "xai"
   );
-    }
+}
+
 // ─── Gemini (unique format) ───────────────────────────────────────────────────
 
 export async function callGemini(messages: Message[], systemPrompt: string | undefined, apiKey: string, model: string, maxTokens: number, temperature: number): Promise<string> {
-  const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
+  const url = `https://generativelanguage.googleapis.com/v1/models/${model}:generateContent?key=${apiKey}`;
   const contents = messages.map((m) => ({
     role: m.role === "assistant" ? "model" : "user",
     parts: [{ text: m.content }],
@@ -361,4 +362,4 @@ export async function callProvider(
   const fn = map[provider];
   if (!fn) throw new Error(`Unknown provider: ${provider}`);
   return fn(messages, systemPrompt, apiKey, model, maxTokens, temperature);
-      }
+                        }
