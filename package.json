@@ -1,6 +1,6 @@
 {
   "name": "novixo-ai",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Unified AI provider client with auto-fallback, rate-limit detection, and response caching. Works with Groq, Gemini, and Anthropic.",
   "type": "module",
   "main": "./dist/index.cjs",
