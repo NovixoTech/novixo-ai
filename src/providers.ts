@@ -362,4 +362,4 @@ export async function callProvider(
   const fn = map[provider];
   if (!fn) throw new Error(`Unknown provider: ${provider}`);
   return fn(messages, systemPrompt, apiKey, model, maxTokens, temperature);
-                        }
+}
